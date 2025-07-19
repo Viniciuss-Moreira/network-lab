@@ -1,0 +1,46 @@
+{
+  "version": "2",
+  "name": "Enterprise WAN",
+  "topology": [
+    {
+      "node_id": "rdc",
+      "name": "Router_DC",
+      "node_type": "router",
+      "properties": {
+        "interfaces": ["Gig0/0", "Gig0/1", "Gig0/2"]
+      }
+    },
+    {
+      "node_id": "rbr1",
+      "name": "Router_Branch1",
+      "node_type": "router",
+      "properties": {
+        "interfaces": ["Gig0/0", "Gig0/1"]
+      }
+    },
+    {
+      "node_id": "rbr2",
+      "name": "Router_Branch2",
+      "node_type": "router",
+      "properties": {
+        "interfaces": ["Gig0/0", "Gig0/1"]
+      }
+    },
+    {
+      "node_id": "fw",
+      "name": "Firewall",
+      "node_type": "qemu",
+      "properties": {
+        "image": "pfSense",
+        "adapter_type": "e1000"
+      }
+    }
+  ],
+  "links": [
+    { "nodes": ["rdc:Gig0/0", "fw:eth0"] },
+    { "nodes": ["fw:eth1", "rbr1:Gig0/0"] },
+    { "nodes": ["fw:eth2", "rbr2:Gig0/0"] },
+    { "nodes": ["rbr1:Gig0/1", "rdc:Gig0/1"] },
+    { "nodes": ["rbr2:Gig0/1", "rdc:Gig0/2"] }
+  ]
+}

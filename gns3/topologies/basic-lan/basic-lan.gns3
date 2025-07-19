@@ -1,0 +1,43 @@
+{
+  "version": "2",
+  "name": "Basic LAN",
+  "topology": [
+    {
+      "node_id": "pc1",
+      "name": "PC1",
+      "node_type": "vpcs",
+      "properties": {
+        "adapter_type": "e1000",
+        "ip_address": "192.168.1.10/24",
+        "gateway": "192.168.1.1"
+      }
+    },
+    {
+      "node_id": "pc2",
+      "name": "PC2",
+      "node_type": "vpcs",
+      "properties": {
+        "ip_address": "192.168.1.11/24",
+        "gateway": "192.168.1.1"
+      }
+    },
+    {
+      "node_id": "switch1",
+      "name": "Switch1",
+      "node_type": "ethernet_switch"
+    },
+    {
+      "node_id": "router1",
+      "name": "Router1",
+      "node_type": "router",
+      "properties": {
+        "interfaces": ["Gig0/0", "Gig0/1"]
+      }
+    }
+  ],
+  "links": [
+    { "nodes": ["pc1", "switch1"] },
+    { "nodes": ["pc2", "switch1"] },
+    { "nodes": ["switch1", "router1:Gig0/0"] }
+  ]
+}
