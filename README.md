@@ -1,2 +1,4 @@
-# network-lab
-Topologias e laboratórios virtuais de redes.
+# Network Lab
+Topologias e configurações para simulações:
+- DHCP e DNS.
+- Testes de firewall e NAT.
