@@ -309,7 +309,7 @@ Este projeto está licenciado sob a Licença Apache 2.0 - veja o arquivo [LICENS
 
 ## 👨‍💻 Autor
 
-**Seu Nome**
+**Vinicius Moreira**
 - GitHub: [@Viniciuss-Moreira](https://github.com/Viniciuss-Moreira)
 - LinkedIn: [Vinicius Moreira](https://linkedin.com/in/viniciusmoreira-)
 - Email: vinnismoreira@gmail.com
